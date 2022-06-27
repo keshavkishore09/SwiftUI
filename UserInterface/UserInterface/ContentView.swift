@@ -8,28 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let data = ["Apple", "Oranges", "Grapes", "Apples"]
     var body: some View {
-        HStack {
-            Image(systemName: "sun.max.fill")
-                .resizable()
-                .renderingMode(.original)
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50, alignment: .center)
-                .padding()
-            Image("test")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 300, height: 100, alignment: .center)
-                .padding()
-            Button {
-                print("Button Pressed")
-                didTapButton()
-            } label: {
-                ButtonContent(title: "Button Do Something")
+        NavigationView {
+            VStack {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20 ) {
+                        ForEach(0...100, id: \.self){num in
+                            Text("Label \(num)")
+                        }
+                    }
+                }
+                List(data, id: \.self) { fruit in
+                    Text(fruit)
+                }
+                NavigationLink(destination: Text("Second View").navigationTitle("Second"), label: {
+                    ButtonContent(title: "Do Something")
+                })
+                .navigationTitle("Home")
             }
-
         }
-    }
+       
+
+}
     
     
     func didTapButton() {
