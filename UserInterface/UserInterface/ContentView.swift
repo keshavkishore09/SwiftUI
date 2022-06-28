@@ -7,35 +7,73 @@
 
 import SwiftUI
 
+
+
+struct HomeView {
+    var body: some View {
+        NavigationView {
+            VStack {
+                Color.red
+            }
+            .navigationTitle("Home")
+        }
+    }
+}
+
+
+
+struct ActivityView {
+    var body: some View {
+        NavigationView {
+            VStack {
+                Color.green
+            }
+            .navigationTitle("Activity")
+        }
+    }
+}
+
+
+
+
+struct SettingView {
+    var body: some View {
+        NavigationView {
+            VStack {
+                Color.yellow
+            }
+            .navigationTitle("Settings")
+        }
+    }
+}
+
 struct ContentView: View {
     
     let data = ["Apple", "Oranges", "Grapes", "Apples"]
     var body: some View {
-        NavigationView {
-            VStack {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20 ) {
-                        ForEach(0...100, id: \.self){num in
-                            Text("Label \(num)")
-                        }
-                    }
+        TabView {
+            HomeView()
+                .body.tabItem {
+                        Image(systemName: "house")
+                       Text("Home")
                 }
-                List(data, id: \.self) { fruit in
-                    Text(fruit)
+              ActivityView()
+                .body.tabItem {
+                    Image(systemName: "bell")
+                    Text("Activity")
                 }
-                NavigationLink(destination: Text("Second View").navigationTitle("Second"), label: {
-                    ButtonContent(title: "Do Something")
-                })
-                .navigationTitle("Home")
-            }
+               SettingView()
+                .body.tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
         }
-       
-
 }
     
     
+    
     func didTapButton() {
-        
+        print("Hello")
     }
 }
 
