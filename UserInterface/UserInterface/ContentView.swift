@@ -9,13 +9,13 @@ import SwiftUI
 
 
 
-struct HomeView {
+struct ActivityView {
     
     var data = (0...1000).map { val in
         "Grid Item \(val)"
     }
     
-    var columns: [GridItem] = [GridItem(.flexible(minimum: 75, maximum: 150), spacing: 20, alignment: .center)]
+    var columns: [GridItem] = [GridItem(.flexible(minimum: 75, maximum: 150), spacing: 20, alignment: .center), GridItem(.flexible(minimum: 75, maximum: 150), spacing: 20, alignment: .center), GridItem(.flexible(minimum: 75, maximum: 150), spacing: 20, alignment: .center)]
     var body: some View {
         NavigationView {
             VStack {
@@ -27,7 +27,7 @@ struct HomeView {
                                     .frame(width: 120, height: 100, alignment: .center)
                                     .foregroundColor(Color.purple)
                                 Text(item)
-                            }
+                            }.padding()
                         }
                     }
                 }
@@ -39,12 +39,38 @@ struct HomeView {
 
 
 
-struct ActivityView {
+struct HomeView {
+    @State var text = ""
     var body: some View {
         NavigationView {
             VStack {
-                Color.green
+                Form {
+                    Section(header: Text("Your Info"), footer: Text("Enter your info to create the account")) {
+                        TextField("Email Address", text: $text)
+                        SecureField("Password", text: $text)
+                              
+                    }
+                    
+                    
+                    Section(header: Text("Your Passsword"), footer: Text("Enter your Password to create the account")) {
+                        SecureField("Password", text: $text)
+                        SecureField("Confirm Password", text: $text)
+                    }
+                }
+                
+               TextField("Email Address", text: $text)
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                    .cornerRadius(10)
+                
+                SecureField("Password", text: $text)
+                     .padding()
+                     .background(Color(.secondarySystemBackground))
+                     .cornerRadius(10)
+                 Spacer()
+                
             }
+            .padding()
             .navigationTitle("Activity")
         }
     }
