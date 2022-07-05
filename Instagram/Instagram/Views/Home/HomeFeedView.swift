@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct HomeFeedView: View {
+    
+
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
                     StoriesView()
-                    ForEach(0...30, id: \.self) {num in
-                        PostView()
+                    ForEach(1...5, id: \.self) {num in
+                        PostView(userImageName: "user\(num)", imageName:  "image\(num)")
                             .padding(.bottom, 20)
                     }
                  }
@@ -25,13 +27,17 @@ struct HomeFeedView: View {
 
 
 struct PostView: View {
+    let userImageName: String
+    let imageName: String
     var body: some View {
         VStack {
-            PostHeaderView()
+            PostHeaderView(userImageName: userImageName)
               .padding()
             
             // Image
-            Image("foo")
+            Image(imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
                 .frame(width: 430, height: 430, alignment: .center)
                 .background(Color(.secondarySystemBackground))
             PostActionsButtonView()
@@ -75,14 +81,16 @@ struct PostView: View {
 
 
 struct PostHeaderView: View {
+    let userImageName: String
     var body: some View {
         HStack {
             // User profile picture and username
-            Image(systemName: "person.circle")
+            Image(userImageName)
                 .resizable()
                 .foregroundColor(Color.blue)
-                .aspectRatio(contentMode: .fit)
+                .aspectRatio(contentMode: .fill)
                 .frame(width: 40, height: 40, alignment: .center)
+                .cornerRadius(20)
             Text("KanyeWest")
                 .foregroundColor(Color.blue)
                 .bold()

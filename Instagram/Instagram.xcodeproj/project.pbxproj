@@ -91,7 +91,6 @@
 				AB2F3B17286C9A0E0088CCBB /* CameraView.swift */,
 				AB2F3B19286C9A480088CCBB /* NotificationsView.swift */,
 				AB2F3B1B286C9A730088CCBB /* ProfileView.swift */,
-				AB2F3B2128708FD90088CCBB /* StoriesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -100,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				AB2F3B10286C99850088CCBB /* HomeFeedView.swift */,
+				AB2F3B2128708FD90088CCBB /* StoriesView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
