@@ -22,13 +22,9 @@ struct ContentView: View {
                         .resizable()
                         .renderingMode(.original)
                         .aspectRatio(contentMode: zoomedIn ? .fill : .fit)
-                        .frame(width: zoomedIn ? 400 : 50 , height: zoomedIn ? 400 : 50, alignment: .center)
-                        .onTapGesture {
-                            withAnimation {
-                                self.zoomedIn.toggle()
-                            }
-                        }
+                        .frame(width: zoomedIn ? 400 : 100 , height: zoomedIn ? 400 : 100, alignment: .center)
                     Spacer()
+                    ButtonView(zoomedIn: $zoomedIn)
                 }
             }
             
@@ -36,6 +32,31 @@ struct ContentView: View {
         
     }
     
+}
+
+
+struct ButtonView: View {
+    
+    @Binding var zoomedIn: Bool
+    
+    
+    init(zoomedIn: Binding<Bool>) {
+        _zoomedIn = zoomedIn
+    }
+    var body: some View {
+        Button {
+            withAnimation {
+                zoomedIn.toggle()
+            }
+        } label: {
+            Text(zoomedIn ? "Zoom Out" : "Zoom In")
+                .bold()
+                .frame(width: 230, height: 50, alignment: .center)
+                .background(Color(.white))
+                .cornerRadius(8)
+        }
+
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
