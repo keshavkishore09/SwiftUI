@@ -37,7 +37,7 @@ class ContactsListViewModel: ObservableObject {
 
 
 struct ContentView: View {
-    @ObservedObject var viewModel = ContactsListViewModel()
+    @ StateObject var viewModel = ContactsListViewModel()
     
     var body: some View {
         NavigationView {
