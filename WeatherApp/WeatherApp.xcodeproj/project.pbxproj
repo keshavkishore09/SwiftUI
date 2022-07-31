@@ -14,6 +14,7 @@
 		AB2F3B942892DC890088CCBB /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2F3B932892DC890088CCBB /* Models.swift */; };
 		AB2F3B972892DCC70088CCBB /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2F3B962892DCC70088CCBB /* HeaderView.swift */; };
 		AB56888D289363DE00B861A9 /* HourlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56888C289363DE00B861A9 /* HourlyView.swift */; };
+		AB56888F28963C2800B861A9 /* DailyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56888E28963C2800B861A9 /* DailyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		AB2F3B932892DC890088CCBB /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		AB2F3B962892DCC70088CCBB /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		AB56888C289363DE00B861A9 /* HourlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyView.swift; sourceTree = "<group>"; };
+		AB56888E28963C2800B861A9 /* DailyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				AB2F3B872892D4DB0088CCBB /* ContentView.swift */,
 				AB2F3B962892DCC70088CCBB /* HeaderView.swift */,
 				AB56888C289363DE00B861A9 /* HourlyView.swift */,
+				AB56888E28963C2800B861A9 /* DailyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB56888F28963C2800B861A9 /* DailyView.swift in Sources */,
 				AB56888D289363DE00B861A9 /* HourlyView.swift in Sources */,
 				AB2F3B942892DC890088CCBB /* Models.swift in Sources */,
 				AB2F3B882892D4DB0088CCBB /* ContentView.swift in Sources */,

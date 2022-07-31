@@ -10,6 +10,7 @@ import SwiftUI
 class WeatherViewModel: ObservableObject {
     var headerViewModel: HeaderViewModel = HeaderViewModel()
     var hourlyModel = HourlyModel()
+    var dailyModel = DailyModel()
     
 }
 
@@ -31,5 +32,18 @@ class HourData: ObservableObject {
     var temp = "55°"
     var hour = "1PM"
     var imageURL = ""
+    
+}
+
+
+class DailyModel: ObservableObject {
+    var data: [DayData] = []
+}
+
+
+class DayData: ObservableObject {
+    var day = "Monday"
+    var high = "77°F"
+    var low = "67°F"
     
 }

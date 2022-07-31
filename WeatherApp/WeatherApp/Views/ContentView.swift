@@ -10,16 +10,19 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.blue, Color(.link), .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: [.blue, Color(.link), .pink] ), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
-            VStack {
-                HeaderView()
-                HourlyView()
-                Spacer()
+            ScrollView {
+                VStack {
+                    HeaderView()
+                    HourlyView()
+                    DailyView()
+                }
             }
         }
     }
 }
+
 
 
 struct ContentView_Previews: PreviewProvider {
