@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HeaderView: View {
-    var viewModel = WeatherViewModel()
+    
+    @EnvironmentObject var viewModel: WeatherViewModel
     
     var body: some View {
         VStack(spacing: -15) {

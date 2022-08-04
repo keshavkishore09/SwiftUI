@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DailyView: View {
-    var viewModel = WeatherViewModel()
+    @EnvironmentObject var viewModel: WeatherViewModel
     var body: some View {
         VStack {
             // ViewModel.dailyViewModel.data

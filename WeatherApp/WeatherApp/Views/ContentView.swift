@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: WeatherViewModel
+    
+    init () {
+        viewModel.fetchData()
+    }
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.blue, Color(.link), .pink] ), startPoint: .topLeading, endPoint: .bottomTrailing)

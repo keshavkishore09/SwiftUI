@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct HourlyView: View {
-    var viewModel = WeatherViewModel()
+    @EnvironmentObject var viewModel: WeatherViewModel
+    
     var body: some View {
         ScrollView(.horizontal){
             HStack {
-                //viewModel.hourlyModel.data
+                // viewModel.hourlyData    
                 ForEach(0...24, id: \.self) { _ in
                     HourView(model: HourData())
                 }
